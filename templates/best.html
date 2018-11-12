@@ -1,68 +1,36 @@
+{% extends layot.html %}
 
-<html>
-<head>
-  <link rel ="stylesheet" href="css/select.css">
-  <link rel="stylesheet" href="css/design.css">
-  <link rel="stylesheet" href="css/NavigationBar.css">
-  <link rel="stylesheet" href="css/middleJOJO.css">
-  <link rel="stylesheet" href="css/gallery.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <script type="js/select.js"></script>
-  <script src="js/wow.min.js"></script>
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-<title>TEST PAGE</title>
+{% block content %}
 
-
-</head>
-<body>
-  <div class="top">
-<div class="logo wow fadeInUp"> <a href = "style.html">EduStats. </a></div>
-  <ul class="wow fadeInUp">
-    <li><a class="active" href="TOP.html">MAP</a></li>
-      <li><a class="active" href="NEWS.html">NEWS</a></li>
-    <li><a href="#contact">About us</a></li>
-
-    <li><a href="#news">TOP</a></li>
-
-    <li><a href="#about">Search</a></li>
-    <li><a href="#contact">Registration</a></li>
-  </ul>
-  <div class="selectbar wow fadeInUp">
-  <select>
-  <option>english</option>
-  <option>русский</option>
-  </select>
-  </div>
-  </div>
-    <div class = "UNIVER">Best universities in Kazakhstan 2017-2018 </div>
+<div class = "UNIVER">Best universities in Kazakhstan 2017-2018 </div>
 <div class = "EVERY">
 <div class = "UNI1">
 <h1>Nazarbayev University </h1>
-<img src="images/nazar.jpeg">
+<img src="{% static "images/nazar.jpeg" %}">
 
 </div>
 <div class = "UNI2">
 <h1>
 Kazakh National University. Al-Farabi</h1>
-<img src="images/UNI2.jpg">
+<img src="{% static "images/UNI2.jpg" %}">
 </div>
 
 <div class = "UNI3">
 <h1>
 Eurasian National University. L.N. Gumilyov </h1>
-<img src="images/un3.JPG">
+<img src="{% static "images/un3.JPG" %}">
 </div>
 
 <div class = "UN4">
 <h1>
 South Kazakhstan State University. M. Auezov</h1>
-<img src="images/un4.JPG">
+<img src="{% static "images/un4.JPG" %}">
 </div>
 <div class = "UN5">
 <h1> Kazakh Agrotechnical University</h1>
-<img src="images/un5.JPG">
+<img src="{% static "images/un5.JPG" %}">
 </div>
 
 </div>
-</body></html>
+
+{% endblock %}

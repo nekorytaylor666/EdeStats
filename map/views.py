@@ -4,5 +4,5 @@ def index(request):
     context = {
         "items" : 0
     }
-    return render(request,"base.html",context)
+    return render(request,"best.html",context)
 # Create your views here.
