@@ -1,0 +1,31 @@
+.middle{
+  margin-top: 200px;
+  align-items: center;
+  text-align: center;
+
+}
+.middle span{
+  color: WHITE;
+  font-size: 63px;
+}
+.middle .link a{
+  font-size: 40px;
+  color: #00B9FF !important;
+  text-decoration: none;
+}
+.sec{
+  display: flex;
+}
+.family{
+  flex: 1;
+padding: 20px;
+}
+.family img{
+  width: 100%;
+}
+.text{
+  color: WHITE;
+  flex:1;
+  font-size: 25px;
+  padding: 10px;
+}

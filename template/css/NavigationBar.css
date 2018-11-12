@@ -1,0 +1,25 @@
+ul {
+  flex: 2;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    flex:1;
+    float: left;
+}
+
+li a {
+    font-size: 0.8vw;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: RED;
+}

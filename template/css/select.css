@@ -1,0 +1,26 @@
+.top .selectbar{
+  flex: 1;
+	padding-right: 25px;
+}
+.top .selectbar select{
+  float: right;
+  background: none;
+  color: WHITE;
+  border-radius: 50px;
+  font-size: 1vw;
+
+}
+body{
+  background-color: black;
+}
+.Mapa{
+  text-align: center;
+  position: relative;
+  top: 100px;
+
+}
+.TEXT{
+  font-size: 100px;
+  color:white;
+  text-align: center;
+}

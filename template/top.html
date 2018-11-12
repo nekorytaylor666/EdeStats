@@ -1,0 +1,144 @@
+
+<html>
+<head>
+  <link rel ="stylesheet" href="css/select.css">
+  <link rel="stylesheet" href="css/design.css">
+  <link rel="stylesheet" href="css/select.css">
+  <link rel="stylesheet" href="css/NavigationBar.css">
+  <link rel="stylesheet" href="css/middleJOJO.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <script type="js/select.js"></script>
+  <script src="js/wow.min.js"></script>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<title>TEST PAGE</title>
+
+
+</head>
+<body>
+  <div class="top">
+<div class="logo wow fadeInUp"> <a href = "style.html">EduStats. </a></div>
+  <ul class="wow fadeInUp">
+    <li><a class="active" href="TOP.html">MAP</a></li>
+      <li><a class="active" href="NEWS.html">NEWS</a></li>
+    <li><a href="#contact">About us</a></li>
+
+      <li><a class="active" href="BEST.html">TOP</a></li>
+
+    <li><a href="#about">Search</a></li>
+    <li><a href="#contact">Registration</a></li>
+  </ul>
+  <div class="selectbar wow fadeInUp">
+  <select>
+  <option>english</option>
+  <option>русский</option>
+  </select>
+  </div>
+  </div>
+<div class = "Mapa">
+<iframe height="400px" width="1800px"frameborder="0" scrolling="no" src="https://developers.google.com/maps/documentation/javascript/examples/full/map-simple" allowfullscreen="">
+#document
+
+
+
+
+
+<html>
+<head>
+
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<title>TEST PAGE</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body >
+  <div id="mapdiv"></div>
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+<form>
+  <script>
+
+    map = new OpenLayers.Map("mapdiv");
+    map.addLayer(new OpenLayers.Layer.OSM());
+
+    var lonLat = new OpenLayers.LonLat( 71.4072000 ,51.185350 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+
+    var zoom=16;
+
+    var markers = new OpenLayers.Layer.Markers( "Markers" );
+    map.addLayer(markers);
+
+    markers.addMarker(new OpenLayers.Marker(lonLat));
+
+    map.setCenter (lonLat, zoom);
+
+var map = L.map('map');
+map.setView([55.7422, 37.5719], 11);
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+
+map.on('click', function(e) {
+        onMapClick(e);
+    });
+function onMapClick(e) {
+        if (loc1 == null) {
+            loc1 = new L.marker(e.latlng, {draggable: 'true'});
+            loc1.on('dragend', function(event) {
+                //отправляем запрос маршрута
+            });
+            map.addLayer(loc1);
+        }
+        else if (loc2 == null) {
+            loc2 = new L.marker(e.latlng, {draggable: 'true'});
+            loc2.on('dragend', function(event) {
+                //отправляем запрос марурута
+            });
+            map.addLayer(loc2);
+            //отправляем запрос маршрута
+        }
+    }
+    ;
+
+
+    var polyline;
+    function sendPost() {
+        if (loc2 != null && loc1 != null) {
+            var p1 = loc1.getLatLng(),
+                    p2 = loc2.getLatLng();
+            $.post(
+                    //куда шлем запрос,
+                    {l1: p1.lat + ',' + p1.lng, l2: p2.lat + ',' + p2.lng},
+            function(data) {
+                if (data) {
+                    if (polyline) {
+                        map.removeLayer(polyline);
+                    }
+                    var points = data;
+                    polyline = new L.polyline(points, {color: 'red'});
+                    map.addLayer(polyline);
+                    map.fitBounds(polyline.getBounds());
+                }
+            },
+                    "json"
+                    );
+        }
+    }
+
+
+
+
+  </script>
+</form>
+<div id="map">
+<imput type="text">
+</div>
+
+
+
+</body></html>
+    </iframe>
+  </div>
+</body></html>

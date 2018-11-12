@@ -1,0 +1,200 @@
+.galery{
+  background-color: #E9E9E9;
+}
+form{
+  border: 2px solid black;
+}
+iframe{
+  height:600px;
+  width: 1200px;
+}
+a{
+  color:white;
+}
+.poster{
+
+  background-color: WHITE;
+  margin: 100px;
+  padding: 10px;
+  height: 700px;
+  width: 500px;
+}
+.poster img{
+
+  background-color: WHITE;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+}
+.poster-1{
+  flex: 1;
+}
+.poster-2{
+  flex: 1;
+}
+.poster-3{
+  flex: 1;
+}
+.descriprion{
+font-weight: bold;
+font-size: 25px;
+  color:white;
+}
+.MAIN{
+  display: flex;
+  flex-direction:column;
+  text-align: center;
+  margin-left: 280px;
+position: relative;
+bottom: 300px;
+}
+.MAIN img{
+  width: 600px;
+}
+.ONE{
+  padding-bottom:  100px;
+}
+.TWO{
+  padding-bottom: 100px;
+}
+
+.poster-4{
+  flex: 1;
+}
+.galery .block{
+
+    text-align: center;
+  display: flex;
+}
+.galery {
+  font-size: 40px;
+  font-family: fantasy;
+}
+.sign{
+  background-color: #D4D4D4;
+  height: 50px;
+padding: 15px;
+}
+.LOGO {
+  text-align: center;
+}
+.REG span{
+    color: #A5A5A5;
+    font-size: 40px;
+    font-family: fantasy;
+}
+.AboutUs{
+  text-align: center;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.BAT9{
+  display: flex;
+ flex-direction: row;
+
+}
+
+.IMG228 {
+padding-left: 400px;
+padding-top: 250px;
+
+}
+.IMG228 img{
+  width:400px;
+}
+
+.INPT{
+  font-size: 20px;
+
+  margin:20px;
+  font-family: fantasy;
+      color: #A5A5A5;
+      font-weight: bold;
+      text-align: center;
+}
+.INPT input{
+  padding:7px;
+}
+.A{
+  padding:10px;
+}
+.A span{
+  margin-right: 120px;
+}
+.AB span{
+  margin-right: 90px;
+}
+.AC span{
+  margin-right: 80px;
+}
+.AD span{
+  margin-right: 85px;
+}
+.DCE input{
+  width:170px;
+}
+.DCE span{
+  margin-right: 30px;
+}
+.AB{
+  padding:10px;
+}
+.AC{
+  padding:10px;
+}
+.AD{
+  padding:10px;
+}
+.SMT{
+  position: relative;
+  top: -300px;
+}
+
+.UNIVER{
+  font-weight: bold;
+
+      color: #FFF;
+      font-weight: bold;
+      text-align: center;
+      font-size: 30px;
+      margin-top: 100px;
+}
+.EVERY h1{
+  color: #FFF;
+}
+.EVERY{
+  padding: 20px;
+  text-align: center;
+}
+.UNI1{
+  padding: 30px;
+}
+.UNI2{
+  padding: 30px;
+}
+.UNI3{
+  padding: 30px;
+}
+.UN4{
+  padding: 30px;
+}
+.UN5{
+  padding: 30px;
+}
+.UNI1 img{
+  width: 30%;
+}
+.UNI2 img{
+  width: 30%;
+}
+
+.UNI3 img{
+  width: 30%;
+}
+.UN4 img{
+        width: 30%;
+}
+.UN5 img{
+        width: 30%;
+}
