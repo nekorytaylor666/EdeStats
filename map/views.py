@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request,"style.html")
+    context = {
+        "items" : 0
+    }
+    return render(request,"style.html",context)
 # Create your views here.
