@@ -1,20 +1,18 @@
 
 <html>
 <head>
-  <link rel ="stylesheet" href="css/select.css">
-  <link rel="stylesheet" href="css/design.css">
-  <link rel="stylesheet" href="css/select.css">
-  <link rel="stylesheet" href="css/NavigationBar.css">
-  <link rel="stylesheet" href="css/middleJOJO.css">
-  <link rel="stylesheet" href="css/gallery.css">
+  <link rel ="stylesheet" href="{% static 'styles/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/design.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/select.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/NavigationBar.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/middleJOJO.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/gallery.css' %}">
   <link rel="stylesheet" href="css/animate.css">
   <script type="js/select.js"></script>
   <script src="js/wow.min.js"></script>
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <title>TEST PAGE</title>
-
-
 </head>
 <body>
   <div class="top">
@@ -36,7 +34,10 @@
   </select>
   </div>
   </div>
-<div class = "main"> </div>
+<div class = "main"> 
+  {% block content %}
+  {% endblock %}
+</div>
 
 
 </body></html>
