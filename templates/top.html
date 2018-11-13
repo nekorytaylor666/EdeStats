@@ -1,58 +1,10 @@
-
-<html>
-<head>
-  <link rel ="stylesheet" href="css/select.css">
-  <link rel="stylesheet" href="css/design.css">
-  <link rel="stylesheet" href="css/select.css">
-  <link rel="stylesheet" href="css/NavigationBar.css">
-  <link rel="stylesheet" href="css/middleJOJO.css">
-  <link rel="stylesheet" href="css/gallery.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <script type="js/select.js"></script>
-  <script src="js/wow.min.js"></script>
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-<title>TEST PAGE</title>
-
-
-</head>
-<body>
-  <div class="top">
-<div class="logo wow fadeInUp"> <a href = "style.html">EduStats. </a></div>
-  <ul class="wow fadeInUp">
-    <li><a class="active" href="TOP.html">MAP</a></li>
-      <li><a class="active" href="NEWS.html">NEWS</a></li>
-    <li><a href="#contact">About us</a></li>
-
-      <li><a class="active" href="BEST.html">TOP</a></li>
-
-    <li><a href="#about">Search</a></li>
-    <li><a href="#contact">Registration</a></li>
-  </ul>
-  <div class="selectbar wow fadeInUp">
-  <select>
-  <option>english</option>
-  <option>русский</option>
-  </select>
-  </div>
-  </div>
-<div class = "Mapa">
-<iframe height="400px" width="1800px"frameborder="0" scrolling="no" src="https://developers.google.com/maps/documentation/javascript/examples/full/map-simple" allowfullscreen="">
-#document
-
-
-
-
-
-<html>
-<head>
-
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-<title>TEST PAGE</title>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head>
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
 <body >
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <div id="mapdiv"></div>
   <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 <form>
@@ -133,12 +85,11 @@ function onMapClick(e) {
   </script>
 </form>
 <div id="map">
-<imput type="text">
+<input type="text">
 </div>
 
 
 
 </body></html>
-    </iframe>
-  </div>
-</body></html>
+  
+{% endblock %}

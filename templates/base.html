@@ -15,28 +15,17 @@
 </head>
 <body>
   <div class="top">
-<div class="logo wow fadeInUp"> <a href = "style.html">EduStats. </a></div>
+<div class="logo wow fadeInUp"> <a href = "{% url 'main_page' %}">EduStats. </a></div>
   <ul class="wow fadeInUp">
-    <li><a class="active" href="TOP.html">MAP</a></li>
-    <li><a href="#news">NEWS</a></li>
-    <li><a href="#contact">About us</a></li>
-
-    <li><a href="#news">TOP</a></li>
-
-    <li><a href="#about">Search</a></li>
-    <li><a href="#contact">Registration</a></li>
+    <li><a class="active" href="{% url 'map_page' %}">MAP</a></li>
+    
   </ul>
   <div class="selectbar wow fadeInUp">
-  <select>
-  <option>english</option>
-  <option>русский</option>
-  </select>
+  
   </div>
   </div>
-<div class = "main"> 
   {% block content %}
   {% endblock %}
-</div>
 
 
 </body></html>

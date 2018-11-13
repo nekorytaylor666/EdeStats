@@ -19,27 +19,9 @@ $("a").click(function () {
 
 });
          </script>
-<div class="top">
-  <div class="logo wow fadeInUp"> <a href = "style.html">EduStats. </a></div>
-  <ul class="wow fadeInUp">
-    <li><a class="active" href="TOP.html">MAP</a></li>
-    <li><a class="active" href="NEWS.html">NEWS</a></li>
-    <li><a href="#myUs">About us</a></li>
 
-        <li><a class="active" href="BEST.html">TOP</a></li>
-
-    <li><a href="#about">Search</a></li>
-    <li><a href="#myReg">Registration</a></li>
-  </ul>
-  <div class="selectbar wow fadeInUp">
-  <select>
-<option>english</option>
-<option>русский</option>
-</select>
-</div>
-</div>
 <div class = "LOGO">
-<img class="wow fadeInUp"src="images/1.png" style="width:40%">
+<img class="wow fadeInUp"src="{% static "images/1.png" %}" style="width:40%">
 </div>
 
 <div class="middle wow fadeInUp">
@@ -52,12 +34,11 @@ university searching site</span>
 <div class = "BAT9">
 
 <div class="middle sec">
-<div class="family wow fadeInLeft"><img src="images/JOJO_photo.png" alt=""></div>
 <div id="myUs"> </div>
 <div class = "MAIN">
 <div class = "ONE">
 <div class = "UN1">
-<img src="images/un1.jpg">
+<img src="{% static "images/un1.jpg" %}">
 </div>
 <div class = "descriprion">
 We help you to choose most comfortable and the best univeristy for your interests and speciallization
@@ -66,7 +47,7 @@ We help you to choose most comfortable and the best univeristy for your interest
 <br> <br>
 <div class = "TWO">
 <div class = "UN2">
-<img src="images/un2.jpg">
+<img src="{% static "images/un2.jpg" %}">
 </div>
 <div class = "descriprion">
 With us you will graduate univeristy for excellent.  Because you will have interest and comfort to study
@@ -75,7 +56,7 @@ With us you will graduate univeristy for excellent.  Because you will have inter
 </div>
 
 <div class ="THREE">
-<img src="images/un3.png">
+<img src="{% static "images/un3.png" %}">
 <div class = "descriprion">
 Don't worry about your future, because you will have best speciallization
 </div>
@@ -88,7 +69,7 @@ Don't worry about your future, because you will have best speciallization
 <div class = "form">
 <div class="galery">
 <div class="block">
-<div class="poster poster-1 wow fadeInLeft"> <div class = "REG"><span>Registration</span> </div><img src="images/poster1.png" alt="">
+<div class="poster poster-1 wow fadeInLeft"> <div class = "REG"><span>Registration</span> </div>
   <div class ="INPT">
 <br><div class = "A"><label id="123" ><span> Name:</span> </label> <br><input type = "text" placeholder=" Name"></div> <br>
 <div class = "AB"><label id="228"><span> Surname:</span> </label>  <br> <input type = "text" placeholder="Surname"> </div> <br>
