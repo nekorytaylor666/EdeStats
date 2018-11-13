@@ -5,91 +5,70 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <div id="mapdiv"></div>
   <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
-<form>
-  <script>
-
-    map = new OpenLayers.Map("mapdiv");
-    map.addLayer(new OpenLayers.Layer.OSM());
-
-    var lonLat = new OpenLayers.LonLat( 71.4072000 ,51.185350 )
-          .transform(
-            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-            map.getProjectionObject() // to Spherical Mercator Projection
-          );
-
-    var zoom=16;
-
-    var markers = new OpenLayers.Layer.Markers( "Markers" );
-    map.addLayer(markers);
-
-    markers.addMarker(new OpenLayers.Marker(lonLat));
-
-    map.setCenter (lonLat, zoom);
-
-var map = L.map('map');
-map.setView([55.7422, 37.5719], 11);
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
-
-map.on('click', function(e) {
-        onMapClick(e);
-    });
-function onMapClick(e) {
-        if (loc1 == null) {
-            loc1 = new L.marker(e.latlng, {draggable: 'true'});
-            loc1.on('dragend', function(event) {
-                //отправляем запрос маршрута
-            });
-            map.addLayer(loc1);
-        }
-        else if (loc2 == null) {
-            loc2 = new L.marker(e.latlng, {draggable: 'true'});
-            loc2.on('dragend', function(event) {
-                //отправляем запрос марурута
-            });
-            map.addLayer(loc2);
-            //отправляем запрос маршрута
-        }
-    }
-    ;
-
-
-    var polyline;
-    function sendPost() {
-        if (loc2 != null && loc1 != null) {
-            var p1 = loc1.getLatLng(),
-                    p2 = loc2.getLatLng();
-            $.post(
-                    //куда шлем запрос,
-                    {l1: p1.lat + ',' + p1.lng, l2: p2.lat + ',' + p2.lng},
-            function(data) {
-                if (data) {
-                    if (polyline) {
-                        map.removeLayer(polyline);
-                    }
-                    var points = data;
-                    polyline = new L.polyline(points, {color: 'red'});
-                    map.addLayer(polyline);
-                    map.fitBounds(polyline.getBounds());
-                }
-            },
-                    "json"
-                    );
-        }
-    }
-
-
-
-
-  </script>
-</form>
-<div id="map">
-<input type="text">
+  <div id="map">
 </div>
 
+   <script>
+        // Initialize and add the map
+        function initMap() {
+      
+      var collection = new Array();
+      var pointMarker = new Array();//store marker in array
+      var description = new Array();
+      "{% for obj in vacancies %}"
+      collection.push(new google.maps.LatLng(parseFloat("{{obj.lat}}"),parseFloat("{{obj.lng}}")));
+      description.push(
+          '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">{{obj.name}}</h1>'+
+          '<div id="bodyContent">'+
+          '<p>{%if instance.salary > 0 %}{{instance.salary}} {{instance.currency}} {% else %}Зарплата договорная{% endif %}</p>'+
+          '<a href={% url "detail" id=obj.id %}>view more</a>'+
+          '</div>'+
+          '</div>');
+      "{% endfor %}"
+      
+      
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: collection[0]
+      });
+      
+      var contentString = '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">TEST</h1>'+
+          '<div id="bodyContent">'+
+          '<p>120000 KZT (TEST)</p>'+
+          '<a href=# >view more</a>'
+          '</div>'+
+          '</div>';
+      
+      var infowindow = new google.maps.InfoWindow();
+       for(var i=0; i<collection.length; i++){
+          
+          marker = new google.maps.Marker({
+                  position: collection[i],
+                  map: map,
+                  animation: google.maps.Animation.BOUNCE,
+                  title: "collection "+i
+          });
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+           return function() {
+               infowindow.setContent(description[i]);
+               infowindow.open(map, marker);
+           }
+       })(marker, i));
+       }
+      
+      }
+      </script>
 
 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjvFngMfGaJ-brN8xkBMXMLE5uBFzZATQ&callback=initMap">
+</script>
 </body></html>
   
 {% endblock %}
