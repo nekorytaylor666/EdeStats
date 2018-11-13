@@ -1,5 +1,4 @@
 import pyrebase
-from geocoding_scripts import get_coord_of_address, get_valid_schools
 
 def init_db():  
     config = {
@@ -22,8 +21,4 @@ def get_schools():
     schools = db.child("educational_institutions").child("astana_kalasynyn_arbir_mektebi").get().val()
     return schools
 
-schools = get_schools()
-
-for school in schools:
-    print(get_valid_schoold(school))
             
