@@ -10,17 +10,25 @@
     color: black;
 
 }
+h1{
+    font-size: 60px;
+    color: white;
+    margin: 10px;
+    margin-bottom: 20px;    
+}
 </style>
+<h1>TOP 5 SCHOOLS:</h1>
 <div class="list-group">
-        
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-            <small class="text-muted">3 days ago</small>
-          </div>
-          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          <small class="text-muted">Donec id elit non mi porta.</small>
+        {% for obj in items %}
+        <a href="{% url "detail" id=obj.id %}" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{obj.name}}</h5>
+                <small class="text-muted">School</small>
+            </div>
+            <p class="mb-1">{{obj.address}}</p>
+            <small class="text-muted">{{obj.ent }}</small>
         </a>
+        {% endfor %} 
         
 </div>
 {% endblock content %}

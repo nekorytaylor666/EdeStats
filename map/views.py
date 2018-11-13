@@ -3,11 +3,15 @@ from .firebase import get_schools
 from .models import School
 from .geocoding_scripts import get_valid_schools
 from django.db.models import Q
+from django.db.models import Count
 
 
 def item_list(request):
+    top_records = School.objects.annotate(jobtitle_count=Count('name')).order_by('-ent')[:5]
+
+    print(top_records)
     context = {
-        "items" : 0
+        "items" : top_records
     }
     return render(request,"list_schools.html",context)
 
