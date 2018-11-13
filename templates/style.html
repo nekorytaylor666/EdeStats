@@ -1,17 +1,56 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="css/design.css">
-    <link rel="stylesheet" href="css/select.css">
-    <link rel="stylesheet" href="css/NavigationBar.css">
-    <link rel="stylesheet" href="css/middleJOJO.css">
-    <link rel="stylesheet" href="css/gallery.css">
-    <link rel="stylesheet" href="css/animate.css">
-   
-  </head>
-  <body>
-   
-  </body>
-</html>
+<script>
+  // Initialize and add the map
+  function initMap() {
+
+var collection = new Array();
+var pointMarker = new Array();//store marker in array
+var description = new Array();
+"{% for obj in vacancies %}"
+collection.push(new google.maps.LatLng(parseFloat("{{obj.lat}}"),parseFloat("{{obj.lng}}")));
+description.push(
+    '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h1 id="firstHeading" class="firstHeading">{{obj.name}}</h1>'+
+    '<div id="bodyContent">'+
+    '<p>{%if instance.salary > 0 %}{{instance.salary}} {{instance.currency}} {% else %}Зарплата договорная{% endif %}</p>'+
+    '<a href={% url "detail" id=obj.id %}>view more</a>'+
+    '</div>'+
+    '</div>');
+"{% endfor %}"
+
+
+var map = new google.maps.Map(document.getElementById('map'), {
+  zoom: 10,
+  center: collection[0]
+});
+
+var contentString = '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h1 id="firstHeading" class="firstHeading">TEST</h1>'+
+    '<div id="bodyContent">'+
+    '<p>120000 KZT (TEST)</p>'+
+    '<a href=# >view more</a>'
+    '</div>'+
+    '</div>';
+
+var infowindow = new google.maps.InfoWindow();
+ for(var i=0; i<collection.length; i++){
+    
+    marker = new google.maps.Marker({
+            position: collection[i],
+            map: map,
+            animation: google.maps.Animation.BOUNCE,
+            title: "collection "+i
+    });
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+     return function() {
+         infowindow.setContent(description[i]);
+         infowindow.open(map, marker);
+     }
+ })(marker, i));
+ }
+
+}
+</script>

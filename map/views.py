@@ -6,7 +6,7 @@ from django.db.models import Q
 
 
 def index(request):
-
+    
     context = {
         "items" : 0
     }
