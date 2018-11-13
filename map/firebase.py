@@ -12,7 +12,7 @@ def init_db():
 
     firebase = pyrebase.initialize_app(config)
     auth = firebase.auth()
-    user = auth.sign_in_with_email_and_password("olzhas2201gmail.com", "Sultan200829")
+    user = auth.sign_in_with_email_and_password("olzhas2201@gmail.com", "sultan2008")
     db = firebase.database()
     print(db)
     return db
