@@ -31,7 +31,7 @@ def init_map(request):
     #         obj_to_save = School(name = _name, address = _address, lat = _lat, lng = _lng, ent = _ent) 
     #         obj_to_save.save()
     schools = Schools.objects.all()
-
+    
     context = {
         "schools" : schools
     }
