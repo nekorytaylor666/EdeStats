@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from map.views import index, init_map
+from map.views import index, init_map, item_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name = 'main_page'),
+    path('<int:id>/', item_detail, name = 'detail'),
     path('map/', init_map, name = 'map_page')
 ]

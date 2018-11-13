@@ -1,12 +1,21 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .firebase import get_schools
 from .models import School
 from .geocoding_scripts import get_valid_schools
 from django.db.models import Q
 
 
+def item_detail(request, id=None):
+    instance = get_object_or_404(School, id=id)
+
+    context_data = {
+        "instance": instance,
+    }
+
+    return render(request, "style.html", context_data)
+
+
 def index(request):
-    
     context = {
         "items" : 0
     }

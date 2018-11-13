@@ -29,14 +29,8 @@ var map;
 "{% for obj in schools %}"
 collection.push(new google.maps.LatLng(parseFloat("{{obj.lat}}"),parseFloat("{{obj.lng}}")));
 description.push(
-    '<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
     '<h1 id="firstHeading" class="firstHeading">{{obj.name}}</h1>'+
-    '<div id="bodyContent">'+
-    '<a href=№>view more</a>'+
-    '</div>'+
-    '</div>');
+    '<a href="{% url "detail" id=obj.id %}">view more</a>');
 "{% endfor %}"
 
   map = new google.maps.Map(document.getElementById('map'), {
