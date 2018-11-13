@@ -15,3 +15,17 @@ def get_coord_of_address(address=None):
                         "address":results[0]["formatted_address"]
                 }
                 return location
+
+def get_valid_schools(school):
+            location = get_coord_of_address(school["Наименование"].replace("\\","")) 
+            if(location is not None and school["Средний балл "]!="-"):
+                obj = {
+                    "name":school["Наименование"],
+                    "ent":school["Средний балл "],
+                    "lat":location["location"]["lat"],
+                    "lng":location["location"]["lng"],
+                    "address":location["address"]
+                }
+                return obj
+            else:
+                return None
