@@ -9,6 +9,9 @@ gunicorn = "*"
 "psycopg2" = "*"
 whitenoise = "*"
 django = "*"
+django-tastypie = "*"
+requests = "*"
+pyrebase = "*"
 
 [dev-packages]
 
