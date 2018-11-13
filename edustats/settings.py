@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['edustatskz.herokuapp.com', '127.0.0.1']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
