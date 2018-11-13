@@ -12,8 +12,9 @@ def init_db():
 
     firebase = pyrebase.initialize_app(config)
     auth = firebase.auth()
-    user = auth.sign_in_with_email_and_password("nekorytaylor@mail.ru", "kiro2000")
+    user = auth.sign_in_with_email_and_password("olzhas2201gmail.com", "Sultan200829")
     db = firebase.database()
+    print(db)
     return db
 
 def get_schools():
@@ -21,4 +22,3 @@ def get_schools():
     schools = db.child("educational_institutions").child("astana_kalasynyn_arbir_mektebi").get().val()
     return schools
 
-            
