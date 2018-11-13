@@ -5,6 +5,12 @@ from .geocoding_scripts import get_valid_schools
 from django.db.models import Q
 
 
+def item_list(request):
+    context = {
+        "items" : 0
+    }
+    return render(request,"list_schools.html",context)
+
 def item_detail(request, id=None):
     instance = get_object_or_404(School, id=id)
 
