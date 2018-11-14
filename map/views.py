@@ -7,7 +7,7 @@ from django.db.models import Count
 
 
 def item_list(request):
-    top_records = School.objects.annotate(jobtitle_count=Count('name')).order_by('-ent')[:5]
+    top_records = School.objects.annotate(jobtitle_count=Count('name')).order_by('-ent')[:10]
 
     print(top_records)
     context = {

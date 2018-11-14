@@ -15,8 +15,14 @@
 <title>Edu Stats</title>
 </head>
 <body>
+  <style>
+  .active{
+    color: grey;
+    font-size: 40px;
+  }
+  </style>
   <div class="top">
-<div class="logo wow fadeInUp"> <a href = "{% url 'main_page' %}">EduStats. </a></div>
+<div class="logo wow fadeInUp"> <a class = "base-title" href = "{% url 'main_page' %}">EduStats. </a></div>
   <ul class="wow fadeInUp">
     <li><a class="active" href="{% url 'map_page' %}">MAP</a></li>
     <li><a class="active" href="{% url 'top_page' %}">TOP</a></li>
